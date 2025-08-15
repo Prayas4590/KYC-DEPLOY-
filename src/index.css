@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VaultKYC Design System - Professional KYC Platform Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Base Colors - Professional Blue Theme */
+    --background: 0 0% 100%;
+    --foreground: 225 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 15% 20%;
+
+    /* Primary - Professional Blue */
+    --primary: 220 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 100% 45%;
+    --primary-light: 220 100% 96%;
+
+    /* Secondary - Neutral */
+    --secondary: 225 10% 96%;
+    --secondary-foreground: 225 15% 25%;
+
+    --muted: 225 10% 96%;
+    --muted-foreground: 225 10% 45%;
+
+    --accent: 220 100% 96%;
+    --accent-foreground: 220 100% 40%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 96%;
+
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 45 93% 96%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 84% 96%;
+
+    /* Risk Level Colors */
+    --risk-low: 142 76% 36%;
+    --risk-medium: 45 93% 47%;
+    --risk-high: 0 84% 60%;
+
+    /* UI Elements */
+    --border: 225 20% 90%;
+    --input: 225 20% 96%;
+    --ring: 220 100% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 100% 50%), hsl(220 100% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 100% 50%), hsl(240 100% 60%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 10% 10% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 10% 10% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 10% 10% / 0.1);
+    --shadow-primary: 0 4px 20px hsl(220 100% 50% / 0.2);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode colors - matching theme */
+    --background: 225 25% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 225 25% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 225 25% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 220 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 100% 50%;
+    --primary-light: 220 100% 15%;
+
+    --secondary: 225 15% 15%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 225 15% 15%;
+    --muted-foreground: 225 10% 60%;
+
+    --accent: 220 100% 15%;
+    --accent-foreground: 220 100% 70%;
+
+    --success: 142 76% 45%;
+    --warning: 45 93% 55%;
+    --destructive: 0 84% 65%;
+
+    --border: 225 20% 20%;
+    --input: 225 20% 15%;
+    --ring: 220 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* VaultKYC Custom Components */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/80 text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-success {
+    @apply bg-success hover:bg-success/90 text-success-foreground px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-warning {
+    @apply bg-warning hover:bg-warning/90 text-warning-foreground px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-destructive hover:bg-destructive/90 text-destructive-foreground px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-verified {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .status-pending {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+
+  .status-rejected {
+    @apply bg-destructive/10 text-destructive border border-destructive/20;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .risk-low {
+    @apply text-success bg-success/10 border-success/20;
+  }
+
+  .risk-medium {
+    @apply text-warning bg-warning/10 border-warning/20;
+  }
+
+  .risk-high {
+    @apply text-destructive bg-destructive/10 border-destructive/20;
+  }
+}
