@@ -108,11 +108,11 @@ const Index = () => {
               <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               
               <div className="flex items-center space-x-3">
-                <a href="/staff-login" className="btn-secondary">
+                <a href="/src\pages\StaffLogin.tsx" className="btn-secondary">
                   <Users className="h-4 w-4 mr-2" />
                   Staff Login
                 </a>
-                <a href="/admin-login" className="btn-primary">
+                <a href="src\pages\AdminLogin.tsx" className="btn-primary">
                   <Shield className="h-4 w-4 mr-2" />
                   Admin Login
                 </a>
