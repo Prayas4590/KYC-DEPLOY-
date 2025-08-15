@@ -4,7 +4,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import routes from "./routes.js"; // Ensure routes.js uses ES module syntax
-import twilioRoutes from "./twilio.js"; // adjust the path if necessary
+// import twilioRoutes from "./twilio.js"; // Removed as twilioRoutes is no longer used
 
 dotenv.config(); // Load variables from .env
 const app = express();
@@ -18,14 +18,13 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
 // --- Health check route ---
 app.get("/", (req, res) => {
   res.send("Vault KYC backend is running.");
 });
 
 // --- API Routes ---
+// app.use(twilioRoutes); // Removed as requested
 app.use("/api", routes);
 
 // --- MongoDB Connect ---

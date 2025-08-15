@@ -1,14 +1,10 @@
 import express from "express";
-import twilioRoutes from "./twilio.js";
 import multer from "multer";
 import KYC, { VerificationMetadata } from "./models.js";
 
 const router = express.Router();
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
-
-router.use(twilioRoutes);
-
 
 // Save user details (initial KYC entry creation)
 router.post("/kyc/details", async (req, res) => {
@@ -53,8 +49,6 @@ router.post("/kyc/details", async (req, res) => {
   } catch (error) {
     console.error("Failed to save user details:", error.message, error.stack);
     res.status(500).json({ error: error.message });
-
-
   }
 });
 
@@ -147,8 +141,6 @@ router.post("/kyc/:kycId/consent", async (req, res) => {
     res.status(500).json({ error: "Failed to record consent" });
   }
 });
-
-
 
 // QR code scan & verification metadata logging
 router.post("/kyc/:kycId/verify", async (req, res) => {
