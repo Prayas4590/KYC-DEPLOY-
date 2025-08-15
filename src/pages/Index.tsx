@@ -108,14 +108,15 @@ const Index = () => {
               <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               
               <div className="flex items-center space-x-3">
-                <a href="/src\pages\StaffLogin.tsx" className="btn-secondary">
-                  <Users className="h-4 w-4 mr-2" />
-                  Staff Login
-                </a>
-                <a href="src\pages\AdminLogin.tsx" className="btn-primary">
-                  <Shield className="h-4 w-4 mr-2" />
-                  Admin Login
-                </a>
+                <a href="/staff/dashboard" className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-colors flex items-center space-x-2">
+  <Users className="h-5 w-5" />
+  <span>Staff Portal</span>
+</a>
+<a href="/admin/dashboard" className="bg-white/10 text-white hover:bg-white/20 px-8 py-4 rounded-lg font-semibold transition-colors flex items-center space-x-2">
+  <Shield className="h-5 w-5" />
+  <span>Admin Portal</span>
+</a>
+
               </div>
             </div>
           </div>
